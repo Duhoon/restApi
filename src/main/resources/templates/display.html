@@ -8,34 +8,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
-        <script>
-            $(function(){
-                    $.get("http://localhost:8080/weather", function(data){
-                        //three hours work
-                        $.each(data, function(index, item){
-                            if(index == 8){
-                                return false;
-                            }
-                            var weather = item.weather[0];
-                            $("#date").append("<th>" + item.dt_txt + "</th>");
-                            var iconurl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
-                            $("#icon").append("<td><img src=\""+ iconurl + "\" "+ "</td>");
-                            $("#weather").append("<td>" + weather.main + "</td>");
-                            $("#climate").append("<td>" + item.main.temp + "</td>");
-                        });
-                        $.each(data, function(index, item){
-                            if(item.dt_txt.substr(11,18) == "12:00:00"){
-                                var weather = item.weather[0];
-                                $("#dl_date").append("<th>" + item.dt_txt.substr(0,10) + "</th>");
-                                var iconurl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
-                                $("#dl_icon").append("<td><img src=\""+ iconurl + "\" "+ "</td>");
-                                $("#dl_weather").append("<td>" + weather.main + "</td>");
-                                $("#dl_climate").append("<td>" + item.main.temp + "</td>");
-                            }
-                        });
-                    });
-            })
-        </script>
+        <script src="../static/js/script.js"></script>
     </head>
     <body>
         <div class="container">
