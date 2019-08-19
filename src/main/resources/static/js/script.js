@@ -1,5 +1,5 @@
 $(function(){
-    $.get("http://localhost:8080/weather", function(data){
+    $.get("https://restapi-zbdob.run.goorm.io/weather", function(data){
         //three hours work
         $.each(data, function(index, item){
             if(index == 8){
